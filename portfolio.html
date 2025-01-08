@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1, h3 {
+            color: #333;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #0066cc;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0;
+            color: #007acc;
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin-top: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: #007acc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about, .skills, .section {
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .skills ul, .section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .skills li, .section li {
+            font-size: 1.2rem;
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skills li::before, .section li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #007acc;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 768px) {
+            img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            footer {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#internships">Internships</a>
+    </div>
+
+    <h1>Portfolio</h1>
+
+    <img src="WhatsApp Image 2024-12-06 at 09.29.32_2e5dca91.jpg" alt="Profile Picture">
+
+    <div id="about" class="container about">
+        <h3>Hi! I am Kaviya...</h3>
+        <p>
+            I am an enthusiastic and dedicated learner with a passion for coding and design. I love creating visually appealing and user-friendly web applications. I am currently exploring new technologies to enhance my skills and am excited to take on new challenges in the world of programming.
+        </p>
+    </div>
+
+    <div id="education" class="container section">
+        <h3>Education</h3>
+        <p>Electronics and Communication Engineering, Sri Eshwar College of Engineering, Coimbatore</p>
+    </div>
+
+    <div id="skills" class="container skills">
+        <h3>Skills</h3>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Java Programming</li>
+            <li>Responsive Web Design</li>
+            <li>Problem Solving and Debugging</li>
+        </ul>
+    </div>
+
+    <div id="projects" class="container section">
+        <h3>Projects</h3>
+        <ul>
+            <li><strong>Eco Power Gen:</strong> Harnessed vehicle exhaust heat using thermoelectric generators to produce electricity. Reduced emissions and improved fuel efficiency.</li>
+            <li><strong>POS System for Cafeteria:</strong> Developed a Java-based console application to manage orders and inventory with MySQL integration.</li>
+            <li><strong>Cooking Waste Energy Generation:</strong> Generated electricity from waste heat during cooking processes for household use.</li>
+        </ul>
+    </div>
+
+    <div id="certifications" class="container section">
+        <h3>Certifications</h3>
+        <ul>
+            <li>Certified in Python Programming – Coursera</li>
+            <li>HTML, CSS, and JavaScript for Web Development – Udemy</li>
+            <li>IoT and Embedded Systems – edX</li>
+        </ul>
+    </div>
+
+    <div id="achievements" class="container section">
+        <h3>Achievements</h3>
+        <ul>
+            <li>Winner, Smart India Hackathon 2024</li>
+            <li>Ranked in the Top 10% in CodeChef Competitions</li>
+            <li>Best Project Award – College Annual Tech Fest</li>
+        </ul>
+    </div>
+
+    <div id="internships" class="container section">
+        <h3>Internships</h3>
+        <ul>
+            <li><strong>IoT Intern at ABC Tech:</strong> Developed IoT-based smart home solutions for energy monitoring.</li>
+            <li><strong>Software Development Intern at XYZ Corp:</strong> Worked on front-end development and API integration for e-commerce applications.</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Connect with me: 
+            <a href="mailto:kaviya.p2023ece@sece.ac.in">Email</a> | 
+            <a href="https://github.com/kaviya-6" target="_blank">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/kaviya-p-76a375293/" target="_blank">LinkedIn</a>
+        </p>
+        <p>© 2025 Kaviya. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

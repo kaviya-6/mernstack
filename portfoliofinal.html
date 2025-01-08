@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117;
+            color: #f0f6fc;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: #ffce45;
+            font-size: 3rem;
+        }
+
+        a {
+            color: #ffce45;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #d4a015;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #161b22;
+        }
+
+        header h1 {
+            font-size: 4rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #ffce45;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            font-size: 1.2rem;
+            padding: 10px 15px;
+            border: 2px solid #ffce45;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffce45;
+            color: #0d1117;
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .profile-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            border: 5px solid #ffce45;
+        }
+
+        .skills-list span {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #1c2128;
+            border: 2px solid #ffce45;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .skills-list span:hover {
+            transform: scale(1.1);
+        }
+
+        /* Projects */
+        .project-card {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #ffce45;
+            border-radius: 5px;
+            background-color: #161b22;
+            text-align: left;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            background-color: #1c2128;
+        }
+
+        /* Achievements: Certification Screenshots */
+        .achievements {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .certification {
+            text-align: center;
+            width: 60%;
+        }
+
+        .achievement-img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            border: 2px solid #ffce45;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            color: #f0f6fc;
+            font-style: italic;
+        }
+
+        /* Contact */
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 25px;
+            background-color: #ffce45;
+            color: #0d1117;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .contact-btn:hover {
+            background-color: #d4a015;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #161b22;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            color: #ffce45;
+            font-size: 1.8rem;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: #d4a015;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            /* Header and Navigation */
+            header h1 {
+                font-size: 3rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            /* Skills Section */
+            .skills-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-list span {
+                width: 80%;
+                font-size: 1rem;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .skills-list img {
+                width: 3cm;
+                height: 3cm;
+            }
+
+            /* Achievements Section */
+            .achievements {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .certification {
+                width: 80%;
+            }
+
+            .achievement-img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Header and Navigation */
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                gap: 5px;
+            }
+
+            /* Contact Section */
+            .contact-btn {
+                width: 100%;
+                font-size: 1rem;
+                padding: 12px;
+            }
+
+            /* Skills Section */
+            .skills-list span {
+                font-size: 0.9rem;
+            }
+
+            /* About Section */
+            .about-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Kaviya P</h1>
+            <p class="subtitle">Software Engineer | MERN Stack | Web Developer</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <div class="about-content">
+                    <img src="WhatsApp Image 2024-12-06 at 09.29.32_2e5dca91.jpg" alt="Profile Picture" class="profile-img">
+                    <div>
+                        <h2>About Me</h2>
+                        <p>Hi! I'm Kaviya, a software engineer passionate about building innovative and efficient solutions. With experience in various technologies, I thrive on solving complex problems and delivering impactful results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-list" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                    <div style="text-align: center; width: 6cm; height: 6cm;">
+                        <span>JavaScript</span>
+                        <img src="js.png" alt="JavaScript Icon" style="width: 4cm; height: 4cm; margin-top: 10px;">
+                    </div>
+                    <div style="text-align: center; width: 6cm; height: 6cm;">
+                        <span>Java</span>
+                        <img src="java.png" alt="Java Icon" style="width: 4cm; height: 4cm; margin-top: 10px;">
+                    </div>
+                    <div style="text-align: center; width: 6cm; height: 6cm;">
+                        <span>Node.js</span>
+                        <img src="nj.png" alt="Node.js Icon" style="width: 4cm; height: 4cm; margin-top: 10px;">
+                    </div>
+                    <div style="text-align: center; width: 6cm; height: 6cm;">
+                        <span>React</span>
+                        <img src="react.png" alt="React Icon" style="width: 4cm; height: 4cm; margin-top: 10px;">
+                    </div>
+                    <div style="text-align: center; width: 6cm; height: 6cm;">
+                        <span>SQL</span>
+                        <img src="ms.png" alt="SQL Icon" style="width: 4cm; height: 4cm; margin-top: 10px;">
+                    </div>
+                    <div style="text-align: center; width: 6cm; height: 6cm;">
+                        <span>HTML & CSS</span>
+                        <img src="hc.png" alt="HTML & CSS Icon" style="width: 4cm; height: 4cm; margin-top: 10px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="project-card">
+                    <h3>Portfolio Website</h3>
+                    <p>A modern portfolio showcasing my projects, skills, and achievements.</p>
+                </div>
+                <div class="project-card">
+                    <h3>E-commerce Platform</h3>
+                    <p>A robust and scalable e-commerce platform with advanced features.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="section">
+            <div class="container">
+                <h2>Achievements</h2>
+                <div class="achievements">
+                    <figure class="certification">
+                        <img src="Screenshot 2025-01-07 095336.png" alt="Certification 1" class="achievement-img">
+                        <figcaption>HackerRank Certification</figcaption>
+                    </figure>
+                    <figure class="certification">
+                        <img src="ramakrishnaclg.jpg" alt="Certification 2" class="achievement-img">
+                        <figcaption>Project Expo</figcaption>
+                    </figure>
+                    <figure class="certification">
+                        <img src="praya.png" alt="Certification 1" class="achievement-img">
+                        <figcaption>Workshop Certification</figcaption>
+                    </figure>
+                    <figure class="certification">
+                        <img src="code fiesta.png" alt="Certification 1" class="achievement-img">
+                        <figcaption>Hackathon Certification</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>If you'd like to collaborate or have a chat, feel free to reach out!</p>
+                <a href="mailto:kaviya.p2023ece@sece.ac.in" class="contact-btn">Email Me</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 @kaviya. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/kaviya-p/" target="_blank" title="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Kaviya01" target="_blank" title="GitHub">
+                    <i class="fa fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/kaviya_19/" target="_blank" title="Instagram">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
