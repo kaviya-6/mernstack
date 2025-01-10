@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery with Modal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Gallery Layout */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Space between images */
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .gallery-item {
+            width: 10cm; /* Each image is 4cm x 4cm */
+            height: 10cm;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure images fit the box */
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            width: 80%; /* Uniform width for all images */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 80%; /* Limit max width */
+            max-height: 80%; /* Ensure it fits within the screen */
+            object-fit: contain; /* Scale image proportionally */
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 36px; /* Bigger close button */
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            cursor: pointer;
+            padding: 15px 20px;
+            border-radius: 50%;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        .modal .close:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #000;
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+
+        /* Show modal when active */
+        .modal.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <!-- Images -->
+        <div class="gallery-item"><img src="l1.png" alt="Image 1" onclick="openModal('l1.png')"></div>
+        <div class="gallery-item"><img src="l2.png" alt="Image 2" onclick="openModal('l2.png')"></div>
+        <div class="gallery-item"><img src="l3.png" alt="Image 3" onclick="openModal('l3.png')"></div>
+        <div class="gallery-item"><img src="l4.png" alt="Image 4" onclick="openModal('l4.png')"></div>
+        <div class="gallery-item"><img src="l5.png" alt="Image 5" onclick="openModal('l5.png')"></div>
+        <div class="gallery-item"><img src="l6.png" alt="Image 6" onclick="openModal('l6.png')"></div>
+        <div class="gallery-item"><img src="l7.png" alt="Image 7" onclick="openModal('l7.png')"></div>
+        <div class="gallery-item"><img src="l8.png" alt="Image 8" onclick="openModal('l8.png')"></div>
+        <div class="gallery-item"><img src="l9.png" alt="Image 9" onclick="openModal('l9.png')"></div>
+        <div class="gallery-item"><img src="l10.png" alt="Image 10" onclick="openModal('l10.png')"></div>
+        <div class="gallery-item"><img src="rose.jpg" alt="Image 11" onclick="openModal('rose.jpg')"></div>
+        <div class="gallery-item"><img src="r1.png" alt="Image 12" onclick="openModal('r1.png')"></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <button class="close" onclick="closeModal()">×</button>
+        <img src="" alt="Enlarged Image" id="modal-img">
+    </div>
+
+    <script>
+        // Function to open modal
+        function openModal(src) {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = src; // Set the image source
+            modal.classList.add('active'); // Show the modal
+        }
+
+        // Function to close modal
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('active'); // Hide the modal
+        }
+    </script>
+</body>
+</html>
